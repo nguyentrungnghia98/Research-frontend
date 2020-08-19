@@ -123,17 +123,17 @@ Only 2 ways to use JavaScript in the browser.
 The first way is adding a script tag for passing a source attribute and
 a reference to that JS file
 
-![](media/image1.png?raw=true)
+![](media/fundamentals/image1.png?raw=true)
 
 The second way is write your job description to html
 
-![](media/image2.png?raw=true)
+![](media/fundamentals/image2.png?raw=true)
 
 -   Problems:
 
 > \+ Doen't scale: to many script load from script tags in HTML
 >
-> ![](media/image3.png?raw=true)
+> ![](media/fundamentals/image3.png?raw=true)
 >
 > \+ Unmaintainable scripts: everything is global in its scope.There's a
 > lot of issues with just scope and variable conflicts.
@@ -142,7 +142,7 @@ The second way is write your job description to html
 
 > \+ IIFE:
 >
-> ![](media/image4.png?raw=true)
+> ![](media/fundamentals/image4.png?raw=true)
 
 -   Treat each file as IIFE (revealing module). Concatenate =\> we can
     "safely" combine files without concern of scope collision
@@ -170,7 +170,7 @@ How do you add a script tag if there is no HTML in node.
 -\> CommonJS have a syntax called required, which allows you to inject
 other pieces of a module into the current module
 
-![](media/image5.png?raw=true)
+![](media/fundamentals/image5.png?raw=true)
 
 Problems:
 
@@ -191,7 +191,7 @@ of dynamic, but there's no way to asynchronously load st.
 
 ### EcmaScript Modules (ESM)
 
-![](media/image6.png?raw=true)
+![](media/fundamentals/image6.png?raw=true)
 
 -   Reusable, encapsulated, organized, convenient
 
@@ -219,31 +219,31 @@ sort of custom workflow and makes it possible.
 
 ### Configuring Webpack
 
-![](media/image7.png?raw=true)
+![](media/fundamentals/image7.png?raw=true)
 
 ## Webpack from scratch
 
 ### Adding npm Scripts for Environment Builds
 
-![](media/image8.png?raw=true)
+![](media/fundamentals/image8.png?raw=true)
 
 ### Setting Up Debugging
 
-![](media/image9.png?raw=true)
+![](media/fundamentals/image9.png?raw=true)
 
 <chrome://inspect/#devices>
 
-![](media/image10.png?raw=true)
+![](media/fundamentals/image10.png?raw=true)
 
 ### Coding Your First Module
 
-![](media/image11.png?raw=true)
+![](media/fundamentals/image11.png?raw=true)
 
 ### CommonJS Export
 
 You cannot use CommonJS and ES syntax in the same file.
 
-![](media/image13.png?raw=true)
+![](media/fundamentals/image13.png?raw=true)
 
 You should not to use CommonJS as much as possible. There are tools like
 Babel and Typescript that safety default to converting your ESM to
@@ -254,15 +254,15 @@ tree shake, to code eliminate and all the optimizations.
 
 ### CommonJS Named Exports
 
-![](media/image15.png?raw=true)
+![](media/fundamentals/image15.png?raw=true)
 
 ### Tree Shaking
 
 Let's bundle this code in production.
 
-![](media/image17.png?raw=true)
+![](media/fundamentals/image17.png?raw=true)
 
--   ![](media/image19.png?raw=true)
+-   ![](media/fundamentals/image19.png?raw=true)
 
 This is what is called dead code elimination or tree shaking. It's the
 fact that Webpack is using statically the syntax to identify what am I
@@ -270,30 +270,30 @@ using?
 
 Becarefull
 
-![](media/image20.png?raw=true)
+![](media/fundamentals/image20.png?raw=true)
 
 ### Webpack Bundle Walkthrough
 
-![](media/image22.png?raw=true)
+![](media/fundamentals/image22.png?raw=true)
 
 Let's bundle code in production.
 
-![](media/image23.png?raw=true)
+![](media/fundamentals/image23.png?raw=true)
 
 -   It's an IIFE. Take an arguments is modules -\> array of IIFE
 
 I usually call it the runtime code
 
-![](media/image24.png?raw=true)
+![](media/fundamentals/image24.png?raw=true)
 
 It takes an ID, and it actually calls the module and then returns any
-exports if it's available![](media/image26.png?raw=true)
+exports if it's available![](media/fundamentals/image26.png?raw=true)
 
 ESM support live binding, it's a feature support cyclical dependencies.
 This is the code required to be able to implement it. Basically it
 freezing the object so that it can't be reassigned or changed
 
-![](media/image27.png?raw=true)
+![](media/fundamentals/image27.png?raw=true)
 
 The last line that gets executed, what happening here?
 
@@ -301,7 +301,7 @@ What's the ID getting passed through? -\> The first module
 
 We're executing our entry point.
 
-![](media/image28.png?raw=true)
+![](media/fundamentals/image28.png?raw=true)
 
 So, webpack_require is just replacing these import statements, the
 require statements to st that actually work in the browser. Execute and
@@ -311,23 +311,23 @@ behaves the same in the right order
 
 ### Webpack Entry
 
-![](media/image30.png?raw=true)
+![](media/fundamentals/image30.png?raw=true)
 
 The top file is your entry point. Tell webpack what (files) to load for
 the browser. Compliments the Output property.
 
-![](media/image31.png?raw=true)
+![](media/fundamentals/image31.png?raw=true)
 
 ### Output & Loaders
 
-![](media/image32.png?raw=true)
+![](media/fundamentals/image32.png?raw=true)
 
 Output tell Webpack where and how to distribute bundles (compilations).
 Works with Entry
 
 \***Loaders**
 
-![](media/image33.png?raw=true)
+![](media/fundamentals/image33.png?raw=true)
 
 As webpack's creating this dependency graph, it's adding files to it. If
 webpack comes across something that matches one of these regular
@@ -338,11 +338,11 @@ Example: this entry file might be importing a .ts file. Webpack's not
 gonna understand typescript out of the box -\> it would throw out errors
 trying to parse that file. Ts-loader tranform .ts file to .js
 
-![](media/image34.png?raw=true)
+![](media/fundamentals/image34.png?raw=true)
 
 ### Chaining Loaders
 
-![](media/image36.png?raw=true)
+![](media/fundamentals/image36.png?raw=true)
 
 Style(css(less())): style.less -\> style.css -\> \*.js -\>
 inlineStyleBrowser.js
@@ -360,7 +360,7 @@ property in the prototype chain
 
 \+ Webpack has a variety of built in plugins
 
-![](media/image37.png?raw=true)
+![](media/fundamentals/image37.png?raw=true)
 
 Webpack itself is a completely event driven architecture. It allow us to
 pivot really quickly. We could instantly adopt a new feature without
@@ -370,13 +370,13 @@ breaking changes.
 
 ### Passing Variable to Webpack Config
 
-![](media/image39.png?raw=true)
+![](media/fundamentals/image39.png?raw=true)
 
 ### Adding Webpack Plugins
 
-![](media/image41.png?raw=true)
+![](media/fundamentals/image41.png?raw=true)
 
-![](media/image42.png?raw=true)
+![](media/fundamentals/image42.png?raw=true)
 
 Html-webpack-plugin is an essential, specifically for single page
 applications. It inject whatever output assets are there into this file
@@ -384,7 +384,7 @@ for you
 
 ### Setting Up a Local Development Server
 
-![](media/image43.png?raw=true)
+![](media/fundamentals/image43.png?raw=true)
 
 I wanna talk about webpack-dev-server. It takes the whole contents of
 your disk and server it up.
@@ -404,7 +404,7 @@ reload.
 Libary webpack-merge, it's essentially just object assign for
 webpack-config
 
-![](media/image44.png?raw=true)
+![](media/fundamentals/image44.png?raw=true)
 
 ### Webpack Q&A
 
@@ -434,9 +434,9 @@ memory error and where would you capture that exception?
 
 ### Using CSS with Webpack
 
-![](media/image46.png?raw=true)
+![](media/fundamentals/image46.png?raw=true)
 
-![](media/image48.png?raw=true)
+![](media/fundamentals/image48.png?raw=true)
 
 This is what style-loader actually does. It's adds the script tag in the
 browser.
@@ -446,7 +446,7 @@ browser.
 Loaders are really useful for helping support a unique webpack feature
 called hot module replacement.
 
-![](media/image49.png?raw=true)
+![](media/fundamentals/image49.png?raw=true)
 
 If we change something. Instantly, you're seeing changes and we're not
 reloading the browser.
@@ -457,13 +457,13 @@ the main thread. Because you're relying on JS to attach a style tag.
 -   We would wanna extract it out and have it in a seperate tag. We can
     do it with **mini-css-extract-plugin**
 
-![](media/image50.png?raw=true)
+![](media/fundamentals/image50.png?raw=true)
 
-![](media/image51.png?raw=true)
+![](media/fundamentals/image51.png?raw=true)
 
 ### File Loader & URL Loader
 
-![](media/image53.png?raw=true)
+![](media/fundamentals/image53.png?raw=true)
 
 Why do we only pass node module references for these loaders?
 
@@ -479,24 +479,24 @@ aren't serializable. We couldn't just pass a function itself in the
 config or the function object cuz we need to be able to serialize that
 information and then we parallelize it.
 
-![](media/image54.png?raw=true)
+![](media/fundamentals/image54.png?raw=true)
 
 ### Loading Images with JavaScript
 
-![](media/image55.png?raw=true)
-![](media/image56.png?raw=true)
+![](media/fundamentals/image55.png?raw=true)
+![](media/fundamentals/image56.png?raw=true)
 
 It will increase bundle file size, not good for performance. In
 production:
 
-![](media/image57.png?raw=true)
+![](media/fundamentals/image57.png?raw=true)
 
 ### Limit Filesize Option in URL Loader
 
-![](media/image54.png?raw=true)
-![](media/image58.png?raw=true)
+![](media/fundamentals/image54.png?raw=true)
+![](media/fundamentals/image58.png?raw=true)
 
-![](media/image59.png?raw=true)
+![](media/fundamentals/image59.png?raw=true)
 
 This option specifying the maximum size of a file in bytes. If the file
 size is **equal** or **greater** than the
@@ -511,24 +511,24 @@ feature or I wanna analyze my build just this one time. But you don't
 want it like shipped right in your prod config because it's not relevant
 every time you run it. (can call it add-ons)
 
-![](media/image60.png?raw=true)
+![](media/fundamentals/image60.png?raw=true)
 
 In package.json add:
 
 \"prod:typescript\": \"npm run prod \-- \--env.presets typescript\",
 
-![](media/image61.png?raw=true)
+![](media/fundamentals/image61.png?raw=true)
 
 ### Bundle Analyzer Preset
 
 Webpack-bundle-analyzer analyzing why did this certain dependency get
 pulled into my application? Why is this file so large?
 
-![](media/image62.png?raw=true)
+![](media/fundamentals/image62.png?raw=true)
 
     \"prod:analyze\": \"npm run prod \-- \--env.presets analyze\",
 
--   ![](media/image63.png?raw=true)
+-   ![](media/fundamentals/image63.png?raw=true)
 
 This is incredibly valued for identifying like, why do I have
 duplication across these bundles? Or why is this file not getting
@@ -545,7 +545,7 @@ include, and it compresses them.
 
 -   Npm run compress \-- \--env.presets analyze
 
-![](media/image64.png?raw=true)
+![](media/fundamentals/image64.png?raw=true)
 
 If you wanted to take performance seriously. I've seen this method and I
 wanna create a service around this. Allows you to have an AV testing
@@ -568,15 +568,15 @@ redeploy it every time as a part of their build.
 
 <https://webpack.js.org/configuration/devtool/>
 
-![](media/image65.png?raw=true)
+![](media/fundamentals/image65.png?raw=true)
 
 You can see your entire project structure if you want.
 
-![](media/image66.png?raw=true)
+![](media/fundamentals/image66.png?raw=true)
 
 You can use another devtool for better speeded builds
 
-![](media/image67.png?raw=true)
+![](media/fundamentals/image67.png?raw=true)
 
 ## Wrapping Up
 
@@ -587,7 +587,7 @@ Is there a lazy load plugin you\'d recommend?
 For example: I would only want to load the footer when somebody clicks
 on that button.
 
-![](media/image68.png?raw=true)
+![](media/fundamentals/image68.png?raw=true)
 
 This syntax only work with typescript or babel.
 
@@ -595,7 +595,7 @@ You don't need any plugin for it.
 
 How do you go about finding good plugins versus bad plugins?
 
-![](media/image69.png?raw=true)
+![](media/fundamentals/image69.png?raw=true)
 
 I would say the best way is just to look and see, kind of like, how
 maintained is it? What version of Webpack is in their tests?
