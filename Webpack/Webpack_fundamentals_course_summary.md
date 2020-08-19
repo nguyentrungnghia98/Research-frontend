@@ -223,9 +223,6 @@ sort of custom workflow and makes it possible.
 
 ## Webpack from scratch
 
-```{=html}
-<!-- -->
-```
 ### Adding npm Scripts for Environment Builds
 
 ![](media/image8.png?raw=true)
