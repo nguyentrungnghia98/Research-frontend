@@ -25,7 +25,7 @@ III\. Module Methed & Magic Comments
 \+ Một số options mở rộng được cấu hình trong import: cách đặt
 tên,mode,\... khi bundle
 
-Contents {#contents .TOC-Heading}
+Contents
 ========
 
 I. [Web performance](#web-performance)
