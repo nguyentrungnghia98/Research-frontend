@@ -1,3 +1,5 @@
+**Đây là bản tóm tắt của khoá học Webpack performance, nên học khoá học trực tiếp để nắm rõ kiến thức hơn**
+
 <https://frontendmasters.com/courses/performance-webpack>
 
 **Tóm tắt:**
