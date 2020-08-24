@@ -1,3 +1,5 @@
+**Đây là bản tóm tắt của khoá học Webpack fundamentals, nên học khoá học trực tiếp để nắm rõ kiến thức hơn**
+
 Course: <https://frontendmasters.com/courses/webpack-fundamentals>
 
 **Tóm tắt:**
